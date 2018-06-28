@@ -26,3 +26,28 @@ def find_total(people)
   end
   return total
 end
+
+def money_transfer(person4,person5, money)
+
+person4[:monies] -= 10
+person5[:monies] += 10
+end
+
+def get_favourite_foods(people)
+snacks = []
+for person in people
+  snacks << person[:favourites][:snacks]
+end
+snacks.flatten!
+return snacks
+end
+
+def no_friends(people)
+  loners = []
+  for person in people
+    if person[:friends].empty?
+      loners << person
+    end
+  end
+return loners
+end
