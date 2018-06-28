@@ -5,3 +5,8 @@ end
 def get_tv_show(person)
 return person[:favourites][:tv_show]
 end
+
+def like_food?(person,food)
+return person[:favourites][:snacks].include? food
+
+end

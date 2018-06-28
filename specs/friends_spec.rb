@@ -1,4 +1,5 @@
 require( 'minitest/autorun' )
+require('minitest/rg')
 require_relative( '../friends' )
 
 class TestFriends < MiniTest::Test
@@ -80,7 +81,10 @@ class TestFriends < MiniTest::Test
 
   # 3. For a given person, check if they like a particular food
   # (e.g. the function likes_to_eat(@person2, "bread") should return true, likes_to_eat(@person3, "spinach") should return false)
-
+  def test_getting_food
+    result = like_food?(@person2, "bread")
+    assert_equal(true, result)
+  end
   # 4. For a given person, add a new name to their list of friends
   # (e.g. the function add_friend(@person2, "Scrappy-Doo") should add Scrappy-Doo to the friends.)
   # (hint: This function should not return anything. After the function call, check for the length of the friends array to test it!)
